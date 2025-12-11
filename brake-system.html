@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авто електроника | AutoParts BG</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        body { background: #e9e9e9; color: #222; }
+
+        /* HEADER */
+        header {
+            background: #111;
+            padding: 14px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid #222;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.35);
+        }
+
+        header .logo { color: #fff; font-size: 1.8em; font-weight: 700; letter-spacing: 1px; }
+
+        nav ul { list-style: none; display: flex; gap: 32px; }
+        nav a { color: #ddd; text-decoration: none; font-size: 1.05em; font-weight: 500; transition: 0.25s ease; }
+        nav a:hover, nav a.active { color: #f39c12; }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1581093588401-cd7e5e7e16b1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            border-bottom: 4px solid #f39c12;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 750px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 { font-size: 2.8em; color: #fff; font-weight: 800; margin-bottom: 12px; text-shadow: 0 4px 10px rgba(0,0,0,0.6); }
+        .hero p { font-size: 1.2em; color: #f0f0f0; margin-bottom: 20px; }
+
+        .back-btn {
+            background: #f39c12;
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+            transition: 0.3s ease;
+        }
+
+        .back-btn:hover { background: #cf7a0a; transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0,0,0,0.55); }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 50px 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-bottom: 4px solid #f39c12;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f8f8f8;
+        }
+
+        .product-card .info { padding: 20px; }
+        .product-card h3 { color: #f39c12; margin-bottom: 10px; font-size: 1.1em; }
+        .product-card p { font-size: 0.95em; color: #555; margin-bottom: 15px; }
+        .price { font-weight: bold; color: #27ae60; margin-bottom: 12px; font-size: 1.05em; }
+
+        .btn {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s ease;
+            display: inline-block;
+        }
+
+        .btn:hover { background-color: #cf7a0a; transform: translateY(-2px); }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 22px;
+            margin-top: 25px;
+            border-top: 3px solid #f39c12;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            header { padding: 12px 22px; flex-direction: column; gap: 8px; }
+            nav ul { gap: 18px; flex-direction: column; }
+            .hero { height: 250px; }
+            .hero h1 { font-size: 2em; }
+            .product-grid { padding: 25px 10px; }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="logo">🚗 AutoParts BG</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Начало</a></li>
+            <li><a class="active" href="products.html">Продукти</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+            <li><a href="cart.html">Количка</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Авто електроника</h1>
+        <p>Разгледайте нашата селекция от електронни компоненти за вашия автомобил</p>
+        <a href="products.html" class="back-btn">⬅ Обратно към категориите</a>
+    </div>
+</section>
+
+<section class="product-grid">
+    <div class="product-card">
+        <img src="varta.jpg" alt="Акумулатор">
+        <div class="info">
+            <h3>Акумулатор Varta 12V 60Ah</h3>
+            <p>Надежден акумулатор за дълъг живот и стабилно електрозахранване на автомобила.</p>
+            <div class="price">189.90 лв</div>
+            <a href="varta.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="alternator.jpg" alt="Алтернатор">
+        <div class="info">
+            <h3>Алтернатор Bosch 0124525032</h3>
+            <p>Висококачествен алтернатор за стабилно зареждане на батерията.</p>
+            <div class="price">420.50 лв</div>
+            <a href="nakladki.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="starter-valeo.webp" alt="Стартер">
+        <div class="info">
+            <h3>Стартер Valeo 438005</h3>
+            <p>Надежден стартер за бързо стартиране на двигателя.</p>
+            <div class="price">230.00 лв</div>
+            <a href="starter.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="kislorod-bosch.jpg" alt="Датчик за кислород">
+        <div class="info">
+            <h3>Датчик за кислород Bosch 0258007178</h3>
+            <p>Подобрява горивната ефективност и намалява емисиите.</p>
+            <div class="price">99.90 лв</div>
+            <a href="oxygen-sensor.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 AutoParts BG — Всички права запазени.</p>
+</footer>
+
+</body>
+</html>

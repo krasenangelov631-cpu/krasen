@@ -1,0 +1,68 @@
+/* Общи настройки за цялата страница */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Заглавие */
+h1 {
+    color: #2c3e50;
+    margin-top: 50px;
+    font-size: 36px;
+}
+
+/* Параграфи */
+p {
+    color: #34495e;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Линкове */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Бутони */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Контейнер за съдържание */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Карти/блокове с фон */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    text-align: left;
+}

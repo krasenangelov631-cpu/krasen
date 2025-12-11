@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>За нас | AutoParts BG</title>
+<style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif;}
+    body {background:#efefef;color:#222;display:flex;flex-direction:column;min-height:100vh;}
+    
+    /* HEADER */
+    header {
+        background:#111;padding:14px 60px;display:flex;justify-content:space-between;align-items:center;
+        box-shadow:0 3px 10px rgba(0,0,0,0.35);
+    }
+    header .logo {color:#fff;font-size:1.7em;font-weight:700;}
+    nav ul {display:flex;list-style:none;gap:30px;}
+    nav a {color:#ccc;text-decoration:none;font-size:1.05em;font-weight:500;transition:.2s ease;}
+    nav a:hover {color:#f39c12;}
+    nav a.active {color:#f39c12;border-bottom:2px solid #f39c12;}
+
+    /* PAGE HEADER */
+    .page-header {
+        text-align:center;padding:45px 20px;background:#1a1a1a;color:#eaeaea;border-bottom:3px solid #2e2e2e;
+        box-shadow:0 4px 15px rgba(0,0,0,0.25);
+    }
+    .page-header h1 {font-size:2.4em;font-weight:700;color:#f39c12;margin-bottom:8px;}
+    .page-header p {opacity:0.85;}
+
+    /* ABOUT SECTION */
+    .about {
+        background:#fff;padding:50px 40px;max-width:1000px;margin:40px auto;border-radius:10px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.12);
+    }
+    .about h2 {color:#f39c12;margin-bottom:20px;font-size:1.8em;}
+    .about p {margin-bottom:20px;line-height:1.7;color:#444;}
+
+    /* VALUES */
+    .values {
+        display:flex;flex-wrap:wrap;justify-content:space-around;margin-top:40px;
+    }
+    .value-box {
+        background:#f8f8f8;padding:25px;border-radius:10px;text-align:center;width:280px;margin:10px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.12);transition:.25s ease;
+    }
+    .value-box:hover {transform:translateY(-5px);box-shadow:0 10px 18px rgba(0,0,0,0.18);}
+    .value-box h3 {color:#f39c12;margin-bottom:10px;font-size:1.25em;}
+    .value-box p {font-size:0.95em;color:#555;}
+
+    /* FOOTER */
+    footer {
+        background:#111;color:#aaa;text-align:center;padding:18px;border-top:2px solid #2a2a2a;margin-top:auto;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:768px){
+        header {padding:12px 20px;flex-direction:column;gap:8px;}
+        nav ul {flex-direction:column;gap:18px;}
+        .values {flex-direction:column;align-items:center;}
+        .page-header h1 {font-size:2em;}
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🚗 AutoParts BG</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Начало</a></li>
+            <li><a href="products.html">Продукти</a></li>
+            <li><a class="active" href="about.html">За нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+            <li><a href="#">Количка</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-header">
+    <h1>За нас</h1>
+    <p>Научи повече за AutoParts BG — твоят доверен партньор в света на авточастите.</p>
+</section>
+
+<section class="about">
+    <h2>Кои сме ние</h2>
+    <p>AutoParts BG е създаден с мисията да направи покупката на авточасти по-лесна, бърза и надеждна. Ние сме екип от ентусиасти с дългогодишен опит в автомобилната индустрия, обединени от любовта към колите и стремежа към качество.</p>
+    <p>Нашият онлайн каталог предлага широка гама от оригинални и алтернативни части за почти всички марки автомобили. Независимо дали търсите елементи за двигателя, ходовата част, спирачната система или просто аксесоари — ние сме тук, за да ви помогнем.</p>
+
+    <div class="values">
+        <div class="value-box">
+            <h3>Нашата мисия</h3>
+            <p>Да осигурим на всеки клиент достъп до качествени авточасти на справедливи цени и с бърза доставка.</p>
+        </div>
+        <div class="value-box">
+            <h3>Нашата визия</h3>
+            <p>Да бъдем водещ онлайн магазин за авточасти в България, където доверието и удовлетворението на клиента са на първо място.</p>
+        </div>
+        <div class="value-box">
+            <h3>Нашите ценности</h3>
+            <p>Професионализъм, коректност и любов към автомобилите — това са двигателите на нашия успех.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 AutoParts BG — Всички права запазени.</p>
+</footer>
+
+</body>
+</html>

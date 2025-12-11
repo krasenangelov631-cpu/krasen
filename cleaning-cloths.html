@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комплект кърпи за почистване | AutoParts BG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #e9e9e9;
+            color: #222;
+        }
+
+        header {
+            background-color: #0f0f0f;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 60px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid #222;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.35);
+        }
+
+        header .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 1.05em;
+            font-weight: 500;
+            padding-bottom: 4px;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #f39c12;
+            border-bottom: 2px solid #f39c12;
+        }
+
+        .product-page {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 50px;
+            background-color: #fff;
+            border-radius: 12px;
+            margin: 30px auto;
+            max-width: 1200px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            animation: fadeIn 0.8s ease-out;
+            flex: 1;
+        }
+
+        .product-image {
+            flex: 1 1 300px;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            background-color: #f8f8f8;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            flex: 1 1 300px;
+            max-width: 600px;
+        }
+
+        .product-info h1 {
+            color: #f39c12;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .product-info p {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .product-info ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #444;
+            list-style-type: disc;
+        }
+
+        .product-info li {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .price {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            margin-right: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(243,156,18,0.5);
+            user-select: none;
+        }
+
+        .btn:hover {
+            background-color: #cf7a0a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(207,122,10,0.7);
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            background-color: #0f0f0f;
+            color: #aaa;
+            border-top: 3px solid #f39c12;
+            user-select: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 8px;
+                padding: 12px 22px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .product-page {
+                flex-direction: column;
+                padding: 25px 15px;
+                gap: 30px;
+            }
+
+            .product-info h1 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🚗 AutoParts BG</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Начало</a></li>
+            <li><a href="products.html" class="active">Продукти</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+            <li><a href="#">Количка</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="product-page">
+    <div class="product-image">
+        <img src="kurpi.jpg" alt="Комплект кърпи за почистване" />
+    </div>
+
+    <div class="product-info">
+        <h1>Комплект кърпи за почистване</h1>
+
+        <p>Професионален комплект микрофибърни кърпи за почистване на интериора и екстериора на автомобила.</p>
+
+        <p><strong>Технически характеристики:</strong></p>
+        <ul>
+            <li>Производител: AutoParts</li>
+            <li>Материал: Микрофибър</li>
+            <li>Брой части: 6 кърпи</li>
+            <li>Цвят: Многоцветен</li>
+        </ul>
+
+        <div class="price">19.90 лв</div>
+
+        <a href="https://www.google.com/search?q=car+cleaning+microfiber+towels" 
+           class="btn" target="_blank">🔍 Провери в Google</a>
+
+        <a href="accessories.html" class="btn">⬅ Обратно към аксесоари и консумативи</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 AutoParts BG — Всички права запазени.</p>
+</footer>
+
+</body>
+</html>

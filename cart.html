@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Количка | AutoParts BG</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; margin:0; padding:0; }
+        header { background-color: #111; color:#fff; display:flex; justify-content:space-between; align-items:center; padding:15px 50px; }
+        header .logo { font-size:1.6em; font-weight:bold; }
+        nav ul { list-style:none; display:flex; gap:25px; }
+        nav a { color:#fff; text-decoration:none; font-weight:500; }
+        nav a:hover { color:#f39c12; }
+
+        .cart-page { padding:50px; max-width:1000px; margin:0 auto; background-color:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+        h1 { color:#f39c12; margin-bottom:30px; }
+        table { width:100%; border-collapse:collapse; }
+        th, td { padding:15px; text-align:left; border-bottom:1px solid #ddd; }
+        th { background-color:#f39c12; color:#fff; }
+        .remove-btn { background-color:#e74c3c; color:#fff; padding:5px 10px; border:none; border-radius:4px; cursor:pointer; }
+        .remove-btn:hover { background-color:#c0392b; }
+        .total { text-align:right; margin-top:20px; font-size:1.2em; font-weight:bold; color:#27ae60; }
+        .btn-checkout { background-color:#f39c12; color:#fff; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; font-weight:bold; margin-top:20px; }
+        .btn-checkout:hover { background-color:#d87e0f; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🚗 AutoParts BG</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="products.html">Продукти</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart-page">
+        <h1>Количка</h1>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Продукт</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                    <th>Общо</th>
+                    <th>Действие</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Продуктите ще се добавят динамично тук -->
+            </tbody>
+        </table>
+
+        <div class="total">Общо: <span id="total-price">0.00</span> лв</div>
+        <button class="btn-checkout">Плати</button>
+    </section>
+
+    <script>
+        // Примерни продукти, за демонстрация
+        let cart = [];
+
+        // Функция за добавяне на продукт
+        function addToCart(product) {
+            const existing = cart.find(p => p.name === product.name);
+            if(existing){
+                existing.qty += 1;
+            } else {
+                cart.push({...product, qty:1});
+            }
+            renderCart();
+        }
+
+        // Функция за премахване на продукт
+        function removeFromCart(name) {
+            cart = cart.filter(p => p.name !== name);
+            renderCart();
+        }
+
+        // Функция за рендер на количката
+        function renderCart() {
+            const tbody = document.querySelector("#cart-table tbody");
+            tbody.innerHTML = "";
+            let total = 0;
+            cart.forEach(item => {
+                const row = document.createElement("tr");
+                const itemTotal = (item.price * item.qty).toFixed(2);
+                total += parseFloat(itemTotal);
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.price.toFixed(2)} лв</td>
+                    <td>${item.qty}</td>
+                    <td>${itemTotal} лв</td>
+                    <td><button class="remove-btn" onclick="removeFromCart('${item.name}')">Премахни</button></td>
+                `;
+                tbody.appendChild(row);
+            });
+            document.getElementById("total-price").innerText = total.toFixed(2);
+        }
+
+        // --- Демонстрация: добавяне на продукти автоматично ---
+        addToCart({name:"Подложки за седалки", price:29.90});
+        addToCart({name:"Комплект кърпи за почистване", price:19.90});
+        addToCart({name:"Слънчеви сенници", price:24.90});
+    </script>
+</body>
+</html>

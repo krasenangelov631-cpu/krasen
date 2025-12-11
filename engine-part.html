@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Части за двигател | AutoParts BG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: #e9e9e9;
+            color: #222;
+        }
+
+        /* HEADER */
+        header {
+            background: #0f0f0f;
+            padding: 14px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid #222;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.35);
+        }
+
+        header .logo {
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 1.05em;
+            font-weight: 500;
+            padding-bottom: 4px;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        nav a.active {
+            color: #f39c12;
+            border-bottom: 2px solid #f39c12;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1590371937361-df482b489e8d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            border-bottom: 4px solid #f39c12;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 750px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            background: #f39c12;
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+            transition: 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #cf7a0a;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.55);
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 50px 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-bottom: 4px solid #f39c12;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f8f8f8;
+        }
+
+        .product-card .info {
+            padding: 20px;
+        }
+
+        .product-card h3 {
+            color: #f39c12;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .product-card p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .btn {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #cf7a0a;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #0f0f0f;
+            color: #aaa;
+            text-align: center;
+            padding: 22px;
+            margin-top: 25px;
+            border-top: 3px solid #f39c12;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 22px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav ul {
+                gap: 18px;
+                flex-direction: column;
+            }
+
+            .hero {
+                height: 250px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .product-grid {
+                padding: 25px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🚗 AutoParts BG</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Начало</a></li>
+            <li><a class="active" href="products.html">Продукти</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+            <li><a href="cart.html">Количка</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Части за двигател</h1>
+        <p>Надеждни компоненти за мощност, ефективност и дълъг живот на вашия двигател</p>
+        <a href="products.html" class="back-btn">⬅ Обратно към категориите</a>
+    </div>
+</section>
+
+<section class="product-grid">
+    <div class="product-card">
+        <img src="sparkplug.jpg" alt="Свещ">
+        <div class="info">
+            <h3>Свещи NGK</h3>
+            <p>Осигуряват надеждно запалване и оптимална работа на двигателя.</p>
+            <div class="price">19.90 лв</div>
+            <a href="sparkplug.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="" alt="Маслен филтър">
+        <div class="info">
+            <h3>Маслен филтър Mann</h3>
+            <p>Поддържа двигателя чист и удължава живота му.</p>
+            <div class="price">12.50 лв</div>
+            <a href="oilfilter.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="air-filer.html" alt="Въздушен филтър">
+        <div class="info">
+            <h3>Въздушен филтър Bosch</h3>
+            <p>Осигурява чист въздух за оптимално горене и ефективност.</p>
+            <div class="price">15.90 лв</div>
+            <a href="airfilter.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="timingbelt.jpg" alt="Ремък">
+        <div class="info">
+            <h3>Ремък за ГРМ Gates</h3>
+            <p>Висока издръжливост и прецизност за надеждна синхронизация.</p>
+            <div class="price">89.90 лв</div>
+            <a href="timingbelt.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="waterpump.jpg" alt="Водна помпа">
+        <div class="info">
+            <h3>Водна помпа SKF</h3>
+            <p>Надеждно охлаждане на двигателя за максимална ефективност.</p>
+            <div class="price">129.90 лв</div>
+            <a href="waterpump.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 AutoParts BG — Всички права запазени.</p>
+</footer>
+
+</body>
+</html>

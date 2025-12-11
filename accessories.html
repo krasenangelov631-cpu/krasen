@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аксесоари и консумативи | AutoParts BG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: #e9e9e9; /* светъл фон */
+            color: #222;
+        }
+
+        /* HEADER */
+        header {
+            background: #0f0f0f; /* тъмен хедър */
+            padding: 14px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid #222;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.35);
+        }
+
+        header .logo {
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 1.05em;
+            font-weight: 500;
+            padding-bottom: 4px;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #f39c12; /* оранжев акцент */
+            border-bottom: 2px solid #f39c12;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437a6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            border-bottom: 4px solid #f39c12;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 750px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            background: #f39c12;
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+            transition: 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #cf7a0a;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.55);
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 50px 20px;
+        }
+
+        .product-card {
+            background: #fff; /* светъл фон за продукт */
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-bottom: 4px solid #f39c12; /* оранжев акцент */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f8f8f8;
+        }
+
+        .product-card .info {
+            padding: 20px;
+        }
+
+        .product-card h3 {
+            color: #f39c12; /* оранжев текст */
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .product-card p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #27ae60; /* зелен за цените */
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .btn {
+            background-color: #f39c12; /* оранжев бутон */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #cf7a0a;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #0f0f0f; /* тъмен футър */
+            color: #aaa;
+            text-align: center;
+            padding: 22px;
+            margin-top: 25px;
+            border-top: 3px solid #f39c12;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 22px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav ul {
+                gap: 18px;
+                flex-direction: column;
+            }
+
+            .hero {
+                height: 250px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .product-grid {
+                padding: 25px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🚗 AutoParts BG</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Начало</a></li>
+            <li><a class="active" href="products.html">Продукти</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+            <li><a href="cart.html">Количка</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Аксесоари и консумативи</h1>
+        <p>Разгледайте нашата селекция от аксесоари и консумативи за вашия автомобил</p>
+        <a href="products.html" class="back-btn">⬅ Обратно към категориите</a>
+    </div>
+</section>
+
+<section class="product-grid">
+    <div class="product-card">
+        <img src="chistachki-bosch.jpg" alt="Чистачки Bosch">
+        <div class="info">
+            <h3>Чистачки Bosch Aerotwin</h3>
+            <p>Висококачествени чистачки за оптимална видимост при всякакви атмосферни условия.</p>
+            <div class="price">45.90 лв</div>
+            <a href="wipers.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="little-trees.jpg" alt="Ароматизатор за кола">
+        <div class="info">
+            <h3>Ароматизатор Little Trees</h3>
+            <p>Освежител за кола с дълготраен аромат и стилен дизайн.</p>
+            <div class="price">9.50 лв</div>
+            <a href="air-freshener.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="podlojki-za-sedalki.jpg" alt="Подложки за седалки">
+        <div class="info">
+            <h3>Подложки за седалки</h3>
+            <p>Комфортни и устойчиви подложки, които защитават интериора на автомобила.</p>
+            <div class="price">35.00 лв</div>
+            <a href="seat-covers.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="kurpi.jpg" alt="Комплект кърпи за почистване">
+        <div class="info">
+            <h3>Комплект кърпи за почистване</h3>
+            <p>Професионален комплект кърпи за бързо и ефективно почистване на автомобила.</p>
+            <div class="price">25.90 лв</div>
+            <a href="cleaning-cloths.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="sennik-za-kola.webp" alt="Слънчеви сенници">
+        <div class="info">
+            <h3>Слънчеви сенници за кола</h3>
+            <p>Комплект сенници, които осигуряват комфорт и защита от слънце и топлина.</p>
+            <div class="price">39.90 лв</div>
+            <a href="sun-shades.html" class="btn">Виж повече</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 AutoParts BG — Всички права запазени.</p>
+</footer>
+
+</body>
+</html>
